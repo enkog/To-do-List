@@ -25,8 +25,7 @@ export default class TaskUtils {
 
   // eslint-disable-next-line class-methods-use-this
   reIndexTasks(tasks) {
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < tasks.length; i++) {
+    for (let i = 0; i < tasks.length; i += 1) {
       tasks[i].index = i + 1;
     }
     return tasks;

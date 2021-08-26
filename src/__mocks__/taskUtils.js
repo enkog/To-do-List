@@ -1,5 +1,3 @@
-import { filter } from "lodash";
-
 let tasks = [];
 
 const mock = jest.fn().mockImplementation(() => ({

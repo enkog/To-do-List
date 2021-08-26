@@ -91,14 +91,12 @@ describe('Updating an items completed status', () => {
 
 describe('Clear all completed <li> element from the list', () => {
   test('Clear all completed list', () => {
-    const task = { description: 'Task 2', completed: false, index: 2};
+    const task = { description: 'Task 2', completed: false, index: 2 };
     taskUtils.addTask(task);
     const tasks = taskUtils.getTasks();
     displayTodo(tasks);
-    console.log(tasks);
 
     const completedTask = taskUtils.clearCompleted();
-    console.log(completedTask);
     expect(completedTask).toHaveLength(1);
   });
 });
