@@ -17,6 +17,10 @@ const mock = jest.fn().mockImplementation(() => ({
       tasks[i].index = i + 1;
     }
   },
+  editTaskDescription(task) {
+    const index = task.index - 1;
+    tasks[index].description = task.description;
+  },
 }));
 
 export default mock;

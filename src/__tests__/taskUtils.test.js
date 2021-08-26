@@ -47,6 +47,16 @@ describe('add exactly one <li> element to the list in the DOM', () => {
   });
 });
 
+describe('Edit one <li> element to the list in the DOM', () => {
+  test('that the input of the list is editing', () => {
+    const task = { description: 'Task 2', completed: false, index: 1 };
+    task.description = 'Task 3';
+    taskUtils.editTaskDescription(task);
+    taskUtils.getTasks();
+    expect(task.description).toEqual('Task 3');
+  });
+});
+
 describe('delete exactly one <li> element from the list', () => {
   test('delete one element of the list', () => {
     const taskDescription = document.querySelectorAll('#list li').textContent;
