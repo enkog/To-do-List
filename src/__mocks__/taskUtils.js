@@ -1,3 +1,5 @@
+import { filter } from "lodash";
+
 let tasks = [];
 
 const mock = jest.fn().mockImplementation(() => ({
@@ -23,6 +25,9 @@ const mock = jest.fn().mockImplementation(() => ({
   },
   completed(task) {
     task.completed = !task.completed;
+  },
+  clearCompleted() {
+    return tasks.filter((task) => task.completed === false);
   },
 }));
 
