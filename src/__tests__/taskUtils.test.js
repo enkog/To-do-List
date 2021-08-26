@@ -66,9 +66,3 @@ describe('delete exactly one <li> element from the list', () => {
     expect(list).not.toHaveLength(1);
   });
 });
-
-// deleteTask(index) {
-//     const filteredTasks = tasks.filter((task, i) => i !== index);
-//     const indexedTasks = this.reIndexTasks(filteredTasks);
-//     this.setItems(indexedTasks);
-//   },
