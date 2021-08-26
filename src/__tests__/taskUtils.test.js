@@ -14,8 +14,15 @@ document.body.innerHTML = '<div>'
 
 const displayTodo = (arr) => {
   const ul = document.getElementById('list');
-  arr.forEach(() => {
+  arr.forEach((e) => {
     const li = document.createElement('li');
+    ul.appendChild(li);
+    const checkBox = document.createElement('input');
+    checkBox.type = 'checkbox';
+    const label = document.createElement('label');
+    label.textContent = e.description;
+    li.appendChild(checkBox);
+    li.appendChild(label);
     ul.appendChild(li);
   });
 };
@@ -39,3 +46,29 @@ describe('add exactly one <li> element to the list in the DOM', () => {
     expect(tasks[0].description).toEqual('Task 1');
   });
 });
+
+describe('delete exactly one <li> element from the list', () => {
+  test('delete one element of the list', () => {
+    const taskDescription = document.querySelectorAll('#list li').textContent;
+    const currentTask = taskUtils.getTasks().filter((task) => task.description === taskDescription);
+    taskUtils.deleteTask(currentTask.index);
+    const tasks = taskUtils.getTasks();
+    displayTodo(tasks);
+    const uList = document.querySelector('ul');
+    if (uList) {
+      while (uList.firstChild) {
+        uList.removeChild(uList.firstChild);
+      }
+    }
+    displayTodo(tasks);
+    const list = document.querySelectorAll('#list li');
+    expect(list).toHaveLength(0);
+    expect(list).not.toHaveLength(1);
+  });
+});
+
+// deleteTask(index) {
+//     const filteredTasks = tasks.filter((task, i) => i !== index);
+//     const indexedTasks = this.reIndexTasks(filteredTasks);
+//     this.setItems(indexedTasks);
+//   },

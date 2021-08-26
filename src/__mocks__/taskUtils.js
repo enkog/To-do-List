@@ -11,16 +11,11 @@ const mock = jest.fn().mockImplementation(() => ({
     tasks.push(task);
   },
   deleteTask(index) {
-    const filteredTasks = tasks.filter((task, i) => i !== index);
-    const indexedTasks = this.reIndexTasks(filteredTasks);
-    this.setItems(indexedTasks);
-  },
-  reIndexTasks(todos) {
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < todos.length; i++) {
-      todos[i].index = i + 1;
+    tasks.filter((todo, i) => i !== index);
+    tasks.splice(index, 1);
+    for (let i = 0; i < tasks.length; i += 1) {
+      tasks[i].index = i + 1;
     }
-    return todos;
   },
 }));
 
