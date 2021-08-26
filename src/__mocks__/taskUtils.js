@@ -21,6 +21,9 @@ const mock = jest.fn().mockImplementation(() => ({
     const index = task.index - 1;
     tasks[index].description = task.description;
   },
+  completed(task) {
+    task.completed = !task.completed;
+  },
 }));
 
 export default mock;

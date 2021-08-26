@@ -76,3 +76,15 @@ describe('delete exactly one <li> element from the list', () => {
     expect(list).not.toHaveLength(1);
   });
 });
+
+describe('Updating an items completed status', () => {
+  test('completed is true', () => {
+    const task = { description: 'Task 1', completed: false, index: 1 };
+    taskUtils.addTask(task);
+    const tasks = taskUtils.getTasks();
+    displayTodo(tasks);
+
+    taskUtils.completed(task);
+    expect(task.completed).toBeTruthy();
+  });
+});
