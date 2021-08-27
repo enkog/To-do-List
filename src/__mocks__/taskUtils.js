@@ -4,9 +4,6 @@ const mock = jest.fn().mockImplementation(() => ({
   getTasks() {
     return tasks;
   },
-  addTask(task) {
-    tasks.push(task);
-  },
   deleteTask(index) {
     tasks.filter((todo, i) => i !== index);
     tasks.splice(index, 1);
