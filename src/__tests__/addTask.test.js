@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 import addTask, { tasks } from '../__mocks__/addTask.js';
+import displayTodo from '../__mocks__/displayTodo.js';
 
 jest.mock('../taskUtils.js');
 
@@ -13,7 +14,7 @@ describe('add exactly one <li> element to the list in the DOM', () => {
     + '</div>';
 
   addTask(task);
-
+  displayTodo(tasks);
   test('that the length of the list is 1', () => {
     const list = document.querySelectorAll('#list li');
     expect(list).toHaveLength(1);
