@@ -21,26 +21,6 @@ describe('Edit one <li> element to the list in the DOM', () => {
   });
 });
 
-describe('delete exactly one <li> element from the list', () => {
-  test('delete one element of the list', () => {
-    const taskDescription = document.querySelectorAll('#list li').textContent;
-    const currentTask = taskUtils.getTasks().filter((task) => task.description === taskDescription);
-    taskUtils.deleteTask(currentTask.index);
-    const tasks = taskUtils.getTasks();
-    displayTodo(tasks);
-    const uList = document.querySelector('ul');
-    if (uList) {
-      while (uList.firstChild) {
-        uList.removeChild(uList.firstChild);
-      }
-    }
-    displayTodo(tasks);
-    const list = document.querySelectorAll('#list li');
-    expect(list).toHaveLength(0);
-    expect(list).not.toHaveLength(1);
-  });
-});
-
 describe('Updating an items completed status', () => {
   test('completed is true', () => {
     const task = { description: 'Task 1', completed: false, index: 1 };
