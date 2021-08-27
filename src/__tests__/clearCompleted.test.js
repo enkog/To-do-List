@@ -16,12 +16,12 @@ completed(task3);
 
 const currTask = clearCompleted();
 
-describe('Clear all completed <li> element from the list', () => {
-  test('Clear all completed list', () => {
+describe('Clear all completed task', () => {
+  test('that there is one uncompleted task', () => {
     expect(currTask).toHaveLength(1);
   });
 
-  test('Clear all completed list', () => {
+  test('that there is a task with completed value of false', () => {
     expect(currTask).not.toHaveLength(0);
   });
 });
