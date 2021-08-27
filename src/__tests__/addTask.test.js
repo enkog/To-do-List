@@ -15,6 +15,7 @@ describe('add exactly one <li> element to the list in the DOM', () => {
 
   addTask(task);
   displayTodo(tasks);
+
   test('that the length of the list is 1', () => {
     const list = document.querySelectorAll('#list li');
     expect(list).toHaveLength(1);
@@ -25,15 +26,15 @@ describe('add exactly one <li> element to the list in the DOM', () => {
     expect(list).not.toHaveLength(0);
   });
 
-  test('that the description is Task 1', () => {
+  test('that the task description is Task 1', () => {
     expect(tasks[0].description).toEqual('Task 1');
   });
 
-  test('that the description is not Task 3', () => {
+  test('that the task description is not Task 3', () => {
     expect(tasks[0].description).not.toEqual('Task 3');
   });
 
-  test('that completed is false', () => {
+  test('that task.completed is false', () => {
     expect(tasks[0].completed).toBeFalsy();
   });
 });

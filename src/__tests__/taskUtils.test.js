@@ -11,16 +11,6 @@ document.body.innerHTML = '<div>'
     + '</div>';
 const task = { description: 'Task 1', completed: false, index: 1 };
 
-describe('Edit one <li> element to the list in the DOM', () => {
-  test('that the input of the list is editing', () => {
-    const task = { description: 'Task 2', completed: false, index: 1 };
-    task.description = 'Task 3';
-    taskUtils.editTaskDescription(task);
-    taskUtils.getTasks();
-    expect(task.description).toEqual('Task 3');
-  });
-});
-
 describe('Updating an items completed status', () => {
   test('completed is true', () => {
     const task = { description: 'Task 1', completed: false, index: 1 };

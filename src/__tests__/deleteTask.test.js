@@ -1,8 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import addTask from '../__mocks__/addTask.js';
-import deleteTask, { tasks } from '../__mocks__/deleteTask.js';
+import addTask, { tasks } from '../__mocks__/addTask.js';
+import deleteTask from '../__mocks__/deleteTask.js';
 import displayTodo from '../__mocks__/displayTodo.js';
 
 jest.mock('../taskUtils.js');
@@ -21,17 +21,19 @@ describe('delete exactly one <li> element from the list', () => {
 
   const list = document.querySelectorAll('#list li');
 
-  test('the length of the list is zero', () => {
+  test('that length of the list is zero', () => {
     expect(list).toHaveLength(0);
   });
 
-  test('the length of the list is not one', () => {
+  test('that length of the list is not one', () => {
     expect(list).not.toHaveLength(1);
   });
-  test('the length of the list is not one', () => {
+
+  test('that length of the tasks array is one', () => {
     expect(tasks.length).toBe(0);
   });
-  test('the length of the list is not one', () => {
+
+  test('that the index of the deleted task is 0', () => {
     expect(currTaskIndex).toBe(0);
   });
 });
