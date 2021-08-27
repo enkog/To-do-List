@@ -24,4 +24,16 @@ describe('Clear all completed task', () => {
   test('that there is a task with completed value of false', () => {
     expect(currTask).not.toHaveLength(0);
   });
+
+  test('that currTask contains task1', () => {
+    expect(currTask).toContain(task1);
+  });
+
+  test('that currTask does not contain task2', () => {
+    expect(currTask).not.toContain(task2);
+  });
+
+  test('that currTask does not contain task3', () => {
+    expect(currTask).not.toContain(task3);
+  });
 });
