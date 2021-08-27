@@ -9,7 +9,7 @@ jest.mock('../taskUtils.js');
 const taskUtils = new TaskUtils();
 
 document.body.innerHTML = '<div>'
-    + '  <ul id="list"></ul>'
+    + '<ul id="list"></ul>'
     + '</div>';
 
 const displayTodo = (arr) => {
