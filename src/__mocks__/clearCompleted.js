@@ -1,5 +1,5 @@
 import { tasks } from './addTask.js';
 
-export default function clearCompleted(index) {
+export default function clearCompleted() {
   return tasks.filter((task) => task.completed === false);
 }
