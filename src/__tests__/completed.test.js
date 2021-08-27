@@ -3,7 +3,7 @@ import completed from '../__mocks__/completed.js';
 
 jest.mock('../taskUtils.js');
 
-describe('Edit task description', () => {
+describe('Updating an completed status', () => {
   const firstTask = { description: 'Get ready for school', completed: false, index: 1 };
   const secondTask = { description: 'Task 1', completed: false, index: 1 };
 
